@@ -30,6 +30,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  cursor: pointer;
 }
 
 .cell:nth-child(3n + 0) {
