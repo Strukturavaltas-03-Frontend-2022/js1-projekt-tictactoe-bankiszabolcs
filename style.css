@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  text-align: center;
+}
+.board {
+  background-color: #528abb;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.494);
+  border-radius: 2%;
+}
+
+.cell {
+  border: 0.5px solid rgb(255, 255, 255);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.cell:nth-child(3n + 0) {
+  border-right: 0;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: 0;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: 0;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: 0;
+}
+
+.message {
+  margin: 10px;
+  text-align: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+/* Internetről szedett szép gomb: https://uiverse.io/detail/cssbuttons-io/calm-tiger-42*/
+.button__start {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  color: black;
+  z-index: 1;
+}
+
+.button__start:before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button__start:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #528abb;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button__start:hover {
+  cursor: pointer;
+  color: #ffffff;
+  border: 1px solid#528abb;
+}
+
+.button__start:hover:before {
+  top: -35%;
+  background-color: #528abb;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button__start:hover:after {
+  top: -45%;
+  background-color: #528abb;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
