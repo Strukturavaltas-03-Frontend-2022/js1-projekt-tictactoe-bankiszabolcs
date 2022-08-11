@@ -120,6 +120,7 @@ const handleClick = (event) => {
   setMark();
   changeMatrixValue(event.target);
   checkWinner();
+  checkDraw();
   stepCount > 0 ? setButtonMessage("Restart") : "";
 };
 
@@ -196,6 +197,9 @@ const checkWinner = () => {
     */
 };
 
+const checkDraw = () => {
+  stepCount === 9 ? setMessage("Draw") : "";
+};
 /**
 A HTML-ben a játékteret követően vegyél fel egy divet message osztállyal,
 'Let's play.' tartalommal.
